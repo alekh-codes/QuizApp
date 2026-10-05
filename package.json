@@ -1,0 +1,32 @@
+{
+  "name": "quiz-backend",
+  "version": "1.0.0",
+  "description": "This is a quiz app for computer science student",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alekh-codes/QuizApp.git"
+  },
+  "keywords": [
+    "Nodejs",
+    "Express",
+    "Mongoose"
+  ],
+  "author": "Alekh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alekh-codes/QuizApp/issues"
+  },
+  "homepage": "https://github.com/alekh-codes/QuizApp#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.5",
+    "express": "^5.2.1",
+    "mongoose": "^9.11.0",
+    "nodemon": "^1.14.10"
+  }
+}
