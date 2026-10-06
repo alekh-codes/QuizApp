@@ -3,12 +3,16 @@ const express = require("express");
 const app = express();
 const connectDB = require("./Database/database")
 const cors = require("cors")
+const cookieParser = require("cookie-parser")
 app.use(cors())
 app.use(express.json());
+app.use(cookieParser());
 
-app.use("/",(req,res)=>{
-    res.send("Hello world")
-})
+const authRouter = require("./routes/auth");
+
+app.use("/",authRouter)
+
+
 
 connectDB()
 .then(()=>{
@@ -17,7 +21,6 @@ connectDB()
     })
 })
 .catch(()=>{
-    console.log("Error in connecting with db");
-    
+    console.log("Error in connecting with db");    
 })
 
