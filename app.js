@@ -9,8 +9,9 @@ app.use(express.json());
 app.use(cookieParser());
 
 const authRouter = require("./routes/auth");
-
+const quizRouter = require("./routes/quizRouter")
 app.use("/",authRouter)
+app.use("/",quizRouter)
 
 
 
