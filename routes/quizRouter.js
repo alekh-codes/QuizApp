@@ -1,14 +1,15 @@
 const { default: axios } = require("axios");
-const express = require("express")
+const express = require("express");
+const userAuth = require("../middlewares/auth");
 const quizRouter = express.Router();
 
-quizRouter.get("/categories", async(req,res) =>{
+quizRouter.get("/categories",userAuth ,async(req,res) =>{
     const category = ["JavaScript","Java","C++","C","Python","React","Node.js","SQL","PostgreSQL"]
     res.status(200).json({
     topics:category});
 })
 
-quizRouter.get("/topics", async(req,res)=>{
+quizRouter.get("/topics",userAuth, async(req,res)=>{
     try{
         const {topic} = req.query;
 
