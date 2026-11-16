@@ -1,6 +1,6 @@
 const User = require("../Schema/User");
 const jwt = require("jsonwebtoken");
-const userAuth = async (res,req,next) => {
+const userAuth = async (req,res,next) => {
     try{
         const {token} = req.cookies;
         if(!token){
@@ -13,7 +13,7 @@ const userAuth = async (res,req,next) => {
 
         const user = await User.findById(_id);
 
-        if(!user) return res.status(401).json({message:"Invlaid user"});
+        if(!user) return res.status(401).json({message:"Invalid user"});
 
         req.user = user;
         next();
